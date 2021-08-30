@@ -44,6 +44,7 @@
     <Compile Include="Classes\BoxID.cs" />
     <Compile Include="Classes\ChronalCalibrator.cs" />
     <Compile Include="Classes\Fabric.cs" />
+    <Compile Include="Classes\GuardSleepTracker.cs" />
     <Compile Include="Helpers\FileHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

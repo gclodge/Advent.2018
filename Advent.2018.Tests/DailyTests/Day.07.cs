@@ -17,17 +17,49 @@ namespace Advent._2018.Tests.DailyTests
 
         public string InputFile => TestHelper.GetInputFile(this);
 
+        [TestMethod]
+        public void Test_KnownSteps()
+        {
+            var inputs = new List<string>()
+            {
+                "Step C must be finished before step A can begin.",
+                "Step C must be finished before step F can begin.",
+                "Step A must be finished before step B can begin.",
+                "Step A must be finished before step D can begin.",
+                "Step B must be finished before step E can begin.",
+                "Step D must be finished before step E can begin.",
+                "Step F must be finished before step E can begin."
+            };
+
+            var solver = new StepSolver(inputs);
+            solver.Solve(1, isTest: true);
+
+            var order = solver.Ordered.ToString();
+            Assert.IsTrue(order == "CABDFE");
+        }
 
         [TestMethod]
         public void PartOne()
         {
-            throw new NotImplementedException();
+            var inputs = Helpers.FileHelper.ParseFile(InputFile);
+
+            var solver = new StepSolver(inputs);
+            solver.Solve(1, false);
+
+            var order = solver.Ordered.ToString();
+            Assert.IsTrue(order == "LAPFCRGHVZOTKWENBXIMSUDJQY");
         }
 
         [TestMethod]
         public void PartTwo()
         {
-            throw new NotImplementedException();
+            var inputs = Helpers.FileHelper.ParseFile(InputFile);
+
+            var solver = new StepSolver(inputs);
+            solver.Solve(2, false);
+
+            var time = solver.TimeTaken;
+            Assert.IsTrue(time == 936);
         }
     }
 }

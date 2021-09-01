@@ -1,6 +1,8 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Collections.Generic;
 
 namespace Advent._2018.Tests
 {
@@ -42,5 +44,16 @@ namespace Advent._2018.Tests
         {
             return Path.Combine(TestDir, $"Day.{dt.Number.ToString().PadLeft(2, '0')}.{kernel}.txt");
         }
+
+        const int Seed = 1337;
+        static readonly Random Rand = new Random(Seed);
+        public static T ChooseRandom<T>(IEnumerable<T> things)
+        {
+            int count = things.Count();
+            int idx = Rand.Next(Seed);
+
+            return things.ElementAt(idx % count);
+        }
+
     }
 }

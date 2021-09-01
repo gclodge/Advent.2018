@@ -47,6 +47,7 @@
     <Compile Include="Classes\Fabric.cs" />
     <Compile Include="Classes\GuardSleepTracker.cs" />
     <Compile Include="Classes\LicenseTree.cs" />
+    <Compile Include="Classes\MarbleGame.cs" />
     <Compile Include="Classes\Polymer.cs" />
     <Compile Include="Classes\StepSolver.cs" />
     <Compile Include="Helpers\FileHelper.cs" />
